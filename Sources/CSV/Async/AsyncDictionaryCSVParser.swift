@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 13.0.0, *)
 @available(macOS 12.0, *)
 public class AsyncDictionaryCSVParser: AsyncSequence {
     public typealias Element = [String: String]
@@ -21,7 +22,7 @@ public class AsyncDictionaryCSVParser: AsyncSequence {
     }
 }
 
-@available(macOS 12.0.0, *)
+@available(iOS 13.0.0, *)
 public class AsyncDictionaryCSVParserIterator: AsyncIteratorProtocol {
     let parser: CSVParser
     

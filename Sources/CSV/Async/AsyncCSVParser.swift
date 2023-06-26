@@ -7,7 +7,7 @@
 
 import Foundation
 
-@available(macOS 12.0, *)
+@available(iOS 13.0.0, *)
 public class AsyncCSVParser: AsyncSequence {
     public typealias Element = [String]
     
@@ -21,13 +21,14 @@ public class AsyncCSVParser: AsyncSequence {
     }
 }
 
-@available(macOS 12.0.0, *)
+@available(iOS 13.0.0, *)
 public class AsyncCSVParserIterator: AsyncIteratorProtocol {
     let parser: CSVParser
     
     internal init(parser: CSVParser) {
         self.parser = parser
     }
+    
     
     public func next() async -> [String]? {
         parser.next()

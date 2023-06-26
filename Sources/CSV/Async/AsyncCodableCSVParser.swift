@@ -7,7 +7,7 @@
 
 import Foundation
 
-@available(macOS 12.0, *)
+@available(iOS 13.0.0, *)
 public class AsyncCodableCSVParser<Element>: AsyncSequence where Element: Decodable {
     let parser: CSVParser
     public init(parser: CSVParser, as: Element.Type) {
@@ -19,7 +19,7 @@ public class AsyncCodableCSVParser<Element>: AsyncSequence where Element: Decoda
     }
 }
 
-@available(macOS 12.0.0, *)
+@available(iOS 13.0.0, *)
 public class AsyncCodableCSVParserIterator<Element>: AsyncIteratorProtocol where Element: Decodable {
     
     let parser: CSVParser
@@ -27,6 +27,7 @@ public class AsyncCodableCSVParserIterator<Element>: AsyncIteratorProtocol where
     internal init(parser: CSVParser, as: Element.Type) {
         self.parser = parser
     }
+    
     
     public func next() async throws -> Element? {
         try parser.next(as: Element.self)
